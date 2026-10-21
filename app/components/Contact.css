@@ -1,0 +1,250 @@
+.contactSection {
+  background-color: #0d1117;
+  color: #ffffff;
+  padding: 60px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.heading {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  position: relative;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.heading::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background-color: #00f2fe;
+  margin: 10px auto 0 auto;
+  border-radius: 2px;
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 30px;
+}
+
+
+.infoColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.infoCard {
+  background-color: #161b22;
+  border: 1px solid #21262d;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.infoCard:hover {
+  border-color: #00f2fe;
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.2);
+}
+
+.infoCard:active {
+  border-color: #00f2fe;
+  box-shadow: 0 0 0 3px rgba(0, 242, 254, 0.4);
+  transform: translateY(0px);
+}
+
+.icon {
+  background-color: #0d1117;
+  color: #00f2fe;
+  font-size: 1.5rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.svgIcon {
+  width: 24px;
+  height: 24px;
+  fill: #00f2fe;
+  display: block;
+}
+
+.infoText h3 {
+  margin: 0 0 5px 0;
+  font-size: 1.1rem;
+  color: #8b949e;
+  font-weight: 500;
+}
+
+.infoText p {
+  margin: 0;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.infoText a {
+  color: #00f2fe;
+  text-decoration: none;
+}
+
+.infoText a:hover {
+  text-decoration: underline;
+}
+
+
+.formColumn {
+  background-color: #161b22;
+  border: 1px solid #21262d;
+  border-radius: 12px;
+  padding: 30px;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formGroup label {
+  color: #c9d1d9;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.formGroup input,
+.formGroup textarea {
+  background-color: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 12px;
+  color: #ffffff;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+  border-color: #00f2fe;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 242, 254, 0.4);
+  background-color: #0d1117;
+}
+
+.formGroup textarea {
+  resize: vertical;
+}
+
+
+.submitBtn {
+  background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+  color: #0d1117;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.submitBtn:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+.submitBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btnIcon {
+  width: 20px;
+  height: 20px;
+  fill: #0d1117;
+  display: block;
+}
+
+.securityToast {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  background-color: rgba(30, 10, 12, 0.95);
+  color: #ff6b6b;
+  border: 1px solid #721c24;
+  padding: 12px 20px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: sans-serif;
+  font-size: 14px;
+  z-index: 99999;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  animation: slideFromRight 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.toastIcon {
+  width: 18px;
+  height: 18px;
+  color: #ff6b6b;
+  flex-shrink: 0;
+}
+
+
+@keyframes slideFromRight {
+  from {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .contentGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .submitBtn {
+    width: 100%;
+    justify-content: center;
+  }
+}
