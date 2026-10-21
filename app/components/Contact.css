@@ -1,3 +1,6 @@
+/* ==========================================================================
+   Contact Section - Main Containers & Grid Configuration
+   ========================================================================== */
 .contactSection {
   background-color: #0d1117;
   color: #ffffff;
@@ -7,6 +10,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
 .container {
@@ -39,7 +43,6 @@
   grid-template-columns: 1fr 1.2fr;
   gap: 30px;
 }
-
 
 .infoColumn {
   display: flex;
@@ -102,6 +105,7 @@
   margin: 0;
   font-size: 1rem;
   color: #ffffff;
+  word-break: break-word;
 }
 
 .infoText a {
@@ -113,7 +117,9 @@
   text-decoration: underline;
 }
 
-
+/* ==========================================================================
+   Form Handling, Overlay Messages & Responsive Layout Overrides
+   ========================================================================== */
 .formColumn {
   background-color: #161b22;
   border: 1px solid #21262d;
@@ -148,6 +154,8 @@
   color: #ffffff;
   font-size: 1rem;
   outline: none;
+  width: 100%;
+  box-sizing: border-box;
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
@@ -162,7 +170,6 @@
 .formGroup textarea {
   resize: vertical;
 }
-
 
 .submitBtn {
   background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
@@ -223,7 +230,6 @@
   flex-shrink: 0;
 }
 
-
 @keyframes slideFromRight {
   from {
     transform: translateX(120%);
@@ -236,15 +242,72 @@
   }
 }
 
+/* ==========================================================================
+   Responsive Adaptability Configurations
+   ========================================================================== */
+@media (max-width: 992px) {
+  .heading {
+    font-size: 2.2rem;
+  }
 
+  .formColumn {
+    padding: 25px;
+  }
+}
 
 @media (max-width: 768px) {
   .contentGrid {
     grid-template-columns: 1fr;
+    gap: 40px;
   }
 
   .submitBtn {
     width: 100%;
     justify-content: center;
+  }
+
+  .heading {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .securityToast {
+    top: auto;
+    bottom: 20px;
+    right: 10px;
+    left: 10px;
+    animation: slideFromBottom 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  }
+}
+
+@media (max-width: 480px) {
+  .contactSection {
+    padding: 40px 15px;
+  }
+
+  .formColumn {
+    padding: 20px 15px;
+  }
+
+  .infoCard {
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .icon {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+@keyframes slideFromBottom {
+  from {
+    transform: translateY(120%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
 }

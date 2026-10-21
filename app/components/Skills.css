@@ -1,3 +1,6 @@
+/* ==========================================================================
+   Skills Section - Base Architecture & Grid Configurations
+   ========================================================================== */
 .skillsSection {
   background-color: transparent;
   color: #ffffff;
@@ -7,10 +10,12 @@
 }
 
 .container {
-  max-width: 1200px; 
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
   text-align: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .heading {
@@ -28,28 +33,19 @@
   border-radius: 2px;
 }
 
-
 .skillsGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px; 
+  gap: 30px;
   width: 100%;
+  box-sizing: border-box;
 }
 
-@media (max-width: 1024px) {
-  .skillsGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 640px) {
-  .skillsGrid {
-    grid-template-columns: 1fr;
-  }
-}
-
+/* ==========================================================================
+   Skill Card Components, Progress Indicators & Media Queries
+   ========================================================================== */
 .skillCard {
-  background-color: #0e1318; 
+  background-color: #0e1318;
   border: 1px solid rgba(255, 255, 255, 0.03);
   border-radius: 12px;
   padding: 35px 30px;
@@ -64,13 +60,11 @@
   box-sizing: border-box;
 }
 
-
 .skillCard:hover {
   border-color: #00e5ff;
   box-shadow: 0px 0px 25px rgba(0, 229, 255, 0.15);
   transform: translateY(-4px);
 }
-
 
 .iconContainer {
   width: 45px;
@@ -88,15 +82,13 @@
   object-fit: contain;
 }
 
-
 .skillName {
   font-size: 1.1rem;
   font-weight: 500;
-  margin: 0 auto 25px auto; 
+  margin: 0 auto 25px auto;
   color: #e2e8f0;
   letter-spacing: 0.5px;
 }
-
 
 .progressBarContainer {
   width: 100%;
@@ -111,4 +103,47 @@
   height: 100%;
   background: linear-gradient(90deg, #00c6ff 0%, #00ff88 100%);
   border-radius: 10px;
+}
+
+/* ==========================================================================
+   Responsive Overrides For Comprehensive Screen Adaptability
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .skillsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .skillsSection {
+    padding: 60px 0;
+  }
+
+  .heading {
+    font-size: 2.3rem;
+  }
+
+  .underline {
+    margin-bottom: 40px;
+  }
+
+  .skillsGrid {
+    gap: 20px;
+  }
+
+  .skillCard {
+    padding: 25px 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .skillsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    font-size: 1.85rem;
+  }
 }

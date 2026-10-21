@@ -11,22 +11,21 @@
   justify-content: center;
   min-height: 100vh;
   position: relative;
-  width: 100vw; 
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
+  width: 100%;
+  max-width: 100%;
   box-sizing: border-box;
   clear: both;
+  overflow-x: hidden;
 
-
-  background-image: 
+  background-image:
     linear-gradient(rgba(0, 255, 204, 0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0, 255, 204, 0.03) 1px, transparent 1px),
     radial-gradient(circle at 80% 20%, rgba(0, 255, 204, 0.15) 0%, transparent 45%),
     radial-gradient(circle at 15% 75%, rgba(0, 188, 255, 0.12) 0%, transparent 50%),
     linear-gradient(#0b0f19, #06080c);
-    
+
   background-size: 40px 40px, 40px 40px, 100% 100%, 100% 100%, 100% 100%;
-  
+
   border-top: 1px solid rgba(0, 255, 204, 0.15);
   box-shadow: inset 0 10px 30px rgba(0, 255, 204, 0.05);
 }
@@ -36,6 +35,7 @@
   margin-bottom: 60px;
   position: relative;
   z-index: 2;
+  padding: 0 20px;
 }
 
 .aboutTitle {
@@ -46,6 +46,7 @@
   letter-spacing: 3px;
   text-transform: uppercase;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  word-wrap: break-word;
 }
 
 .aboutUnderline {
@@ -57,9 +58,9 @@
   box-shadow: 0 0 15px rgba(0, 255, 204, 0.8), 0 0 30px rgba(0, 255, 204, 0.4);
 }
 
-
 .descriptionBox {
   max-width: 850px;
+  width: 100%;
   text-align: center;
   line-height: 2;
   font-size: 1.15rem;
@@ -84,7 +85,9 @@
   text-shadow: 0 0 8px rgba(0, 188, 255, 0.3);
 }
 
-
+/* ==========================================================================
+   Stats Grid System & Adaptability Controls
+   ========================================================================== */
 .statsContainer {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -96,7 +99,6 @@
   position: relative;
   z-index: 2;
 }
-
 
 .statCard {
   background: rgba(11, 15, 25, 0.6);
@@ -111,14 +113,12 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-
 .statCard:hover {
   background: rgba(0, 255, 204, 0.02);
   transform: translateY(-8px);
   border: 1px solid #00ffcc;
   box-shadow: 0 0 25px rgba(0, 255, 204, 0.25), inset 0 0 15px rgba(0, 255, 204, 0.05);
 }
-
 
 .statNumber {
   font-size: 2.8rem;
@@ -142,24 +142,68 @@
   letter-spacing: 0.5px;
 }
 
+/* ==========================================================================
+   Media Queries For Full Device Responsiveness
+   ========================================================================== */
 @media (max-width: 950px) {
+  .aboutSection {
+    padding: 80px 0;
+  }
+
   .statsContainer {
     grid-template-columns: repeat(2, 1fr);
     gap: 25px;
   }
-  
+
   .aboutTitle {
     font-size: 2.8rem;
   }
 }
 
+@media (max-width: 768px) {
+  .aboutTitle {
+    font-size: 2.4rem;
+    letter-spacing: 2px;
+  }
+
+  .descriptionBox {
+    font-size: 1.1rem;
+    margin-bottom: 50px;
+  }
+
+  .statCard {
+    padding: 30px 15px;
+  }
+
+  .statNumber {
+    font-size: 2.3rem;
+  }
+}
+
 @media (max-width: 550px) {
+  .aboutSection {
+    padding: 60px 0;
+  }
+
+  .titleContainer {
+    margin-bottom: 40px;
+  }
+
+  .aboutTitle {
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+
   .statsContainer {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
-  
+
   .descriptionBox {
     font-size: 1.05rem;
     text-align: justify;
+    padding: 0 20px;
+    margin-bottom: 40px;
+    line-height: 1.8;
   }
 }
