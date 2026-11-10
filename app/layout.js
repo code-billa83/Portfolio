@@ -18,6 +18,9 @@ export const metadata = {
   alternates: {
     canonical: '/',
   },
+  verification: {
+    google: "fGE-jCKrQsXe-Aj-HKiN_HYCijM0ML98RkfeIYKG8Mo",
+  },
   icons: {
     icon: '/shiva.jpeg',
   },
@@ -42,7 +45,7 @@ export const metadata = {
     title: 'Shiva Mishra | Full Stack Developer',
     description: 'Full Stack Developer (MERN & Next.js) from Lucknow, India. Building viral web experiences.',
     images: ['/shiva.jpeg'],
-    creator: '@shiva_mishra', // apna twitter handle daal de
+    creator: '@shiva_mishra',
   },
   robots: {
     index: true,
@@ -67,7 +70,7 @@ export default function RootLayout({ children }) {
     "url": "https://portfolio-pearl-two-10.vercel.app",
     "image": "https://portfolio-pearl-two-10.vercel.app/shiva.jpeg",
     "sameAs": [
-      "https://github.com/shiva", // apne links daal de yahan
+      "https://github.com/shiva",
       "https://linkedin.com/in/shiva-mishra",
       "https://instagram.com/shiva_mishra"
     ],
